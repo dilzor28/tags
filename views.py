@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from flask import request, redirect
 from datetime import datetime
 from app import app
@@ -18,4 +19,3 @@ def add_tag():
       defaults={'created_at': datetime.now(), 'updated_at': datetime.now()})
 
     return redirect('/')
-
