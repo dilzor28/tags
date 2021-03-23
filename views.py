@@ -1,9 +1,9 @@
-from flask import request, redirect
+from flask import request, redirect, render_template
 from datetime import datetime
 from app import app
 from tag import Tag
 
-@app.route('/', methods=['GET'])
+#@app.route('/', methods=['GET'])
 def show_tags():
     tags = Tag.select()
     tags_html = '\n'.join(list(map(lambda x: x.name + "<br>", tags)))
@@ -18,3 +18,7 @@ def add_tag():
       defaults={'created_at': datetime.now(), 'updated_at': datetime.now()})
 
     return redirect('/')
+
+@app.route('/', methods=['GET'])
+def show_page():
+    return render_template('template.html')
