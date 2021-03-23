@@ -2,7 +2,6 @@ from flask import request, redirect
 from datetime import datetime
 from app import app
 from tag import Tag
-#quick change
 
 @app.route('/', methods=['GET'])
 def show_tags():
@@ -19,3 +18,4 @@ def add_tag():
       defaults={'created_at': datetime.now(), 'updated_at': datetime.now()})
 
     return redirect('/')
+
