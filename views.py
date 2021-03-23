@@ -17,7 +17,7 @@ def show_page():
     return render_template('template.html')
 
     
-@app.route('/', methods=['GET'])
+# @app.route('/', methods=['GET'])
 def show_tags():
     tags = Tag.select()
     tags_html = '\n'.join(list(map(lambda x: x.name + "<br>", tags)))
